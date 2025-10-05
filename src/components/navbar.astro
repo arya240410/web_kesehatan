@@ -1,0 +1,66 @@
+
+---
+---
+
+<nav class="site-navbar py-3">
+	<div class="container">
+		<ul class="nav center-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#beranda">Beranda</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#tentang">Tentang Kesehatan</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#tips">Tips</a>
+				</li>
+		</ul>
+	</div>
+</nav>
+
+<style>
+	.site-navbar {
+		background: rgba(255, 255, 255, 0.9);
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		backdrop-filter: blur(10px);
+	}
+	.center-nav {
+		display: flex;
+		justify-content: center;
+		gap: 6rem;
+		padding-left: 0;
+		margin: 0;
+	}
+	.center-nav .nav-link {
+		color: #000;
+		font-weight: 500;
+		text-decoration: none;
+		padding: 0.25rem 0;
+		border-radius: 0;
+	}
+	.center-nav .nav-link:hover {
+		text-decoration: none;
+		color: #000;
+		opacity: 0.8;
+	}
+	.center-nav .nav-link.active {
+		position: relative;
+	}
+	.center-nav .nav-link.active::after {
+		content: "";
+		display: block;
+		width: 8px;
+		height: 8px;
+		background: #000;
+		border-radius: 50%;
+		margin: 6px auto 0;
+	}
+	@media (max-width: 576px) {
+		.center-nav {
+			gap: 2rem;
+			flex-wrap: wrap;
+		}
+	}
+</style>
