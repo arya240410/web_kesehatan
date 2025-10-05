@@ -2,33 +2,43 @@
 ---
 
 <section id="beranda" class="hero d-flex align-items-center position-relative">
-	<img src="/web_kesehatan/assets/halaman-depan.jpg" alt="background" class="hero-bg" />
+	<div class="hero-background">
+		<img src="/web_kesehatan/assets/halaman-depan.jpg" alt="background" class="hero-bg" />
+	</div>
 	<div class="container position-relative">
 		<div class="row align-items-center">
-			<div class="col-md-6">
-				<div class="hero-content">
-					<h1 class="display-4 fw-bolder mb-3 text-dark">Edukasi<br /><span class="text-success fw-bold">Remaja</span></h1>
-					<p class="lead mb-4">Media edukatif yang mengajarkan remaja<br /><span class="">tentang pola hidup sehat dan kesejahteran diri.</span></p>
-					<div>
-						<a class="btn btn-success btn-lg me-3" href="#tentang"><i class="bi bi-arrow-right me-2"></i>Pelajari</a>
-						<a class="btn btn-outline-secondary btn-lg" href="#tips"><i class="bi bi-lightbulb me-2"></i>Lihat Tips</a>
+			<div class="col-lg-6 col-md-8">
+				<div class="hero-content bg-white bg-opacity-75 p-4 rounded-3 shadow-sm">
+					<h1 class="display-4 fw-bolder mb-3">Edukasi<br /><span class="text-success">Remaja</span></h1>
+					<p class="lead mb-4">Media edukatif yang mengajarkan remaja<br />tentang pola hidup sehat dan kesejahteran diri.</p>
+					<div class="d-flex gap-3">
+						<a class="btn btn-success btn-lg" href="#tentang"><i class="bi bi-arrow-right me-2"></i>Pelajari</a>
+						<a class="btn btn-outline-dark btn-lg" href="#tips"><i class="bi bi-lightbulb me-2"></i>Lihat Tips</a>
 					</div>
 				</div>
-			</div>
-			<div class="col-md-6 d-none d-md-block">
 			</div>
 		</div>
 	</div>
 
 	<style is:global>
 		.hero {
-            min-height: 100vh;
+			min-height: 100vh;
 			position: relative;
 			display: flex;
 			align-items: center;
-			color: #0b0b0b;
-			padding: 4rem 0;
+			padding: 5rem 0;
 			overflow: hidden;
+			background-color: #f8f9fa;
+		}
+		
+		.hero-background {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0.4) 100%);
 		}
 		
 		.hero-bg {
@@ -38,24 +48,38 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			z-index: 0;
-		}
-		.hero::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			background: linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0) 100%);
-			pointer-events: none;
+			z-index: -1;
 		}
 
-		.hero .container { position: relative; z-index: 2; }
-		.hero h2 { font-size: clamp(1.8rem, 5vw, 3rem); }
-		.hero .lead { color: #333; }
-		.hero .btn { transition: all 0.3s ease; }
-		.hero .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+		.hero .container { 
+			position: relative; 
+			z-index: 2;
+		}
+
+		.hero h1 { 
+			font-size: clamp(2.5rem, 5vw, 3.5rem);
+			line-height: 1.2;
+		}
+
+		.hero .lead { 
+			color: #2c3e50;
+			font-size: clamp(1.1rem, 2vw, 1.25rem);
+		}
+
+		.hero .btn { 
+			transition: all 0.3s ease;
+			padding: 0.8rem 2rem;
+		}
+
+		.hero .btn:hover { 
+			transform: translateY(-2px);
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		}
 
 		.hero-content {
+			backdrop-filter: blur(5px);
 			animation: fadeInUp 1s ease-out;
+			max-width: 600px;
 		}
 
 		@keyframes fadeInUp {
@@ -70,8 +94,21 @@
 		}
 
 		@media (max-width: 767.98px) {
-			.hero { min-height: 100vh; padding: 3rem 0; }
-			.hero::before { background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0) 100%); }
+			.hero { 
+				min-height: 100vh;
+				padding: 2rem 0;
+			}
+			.hero-content {
+				margin: 1rem;
+				padding: 2rem !important;
+			}
+			.hero-background {
+				background: linear-gradient(180deg, 
+					rgba(255,255,255,0.95) 0%,
+					rgba(255,255,255,0.85) 50%,
+					rgba(255,255,255,0.4) 100%
+				);
+			}
 		}
 	</style>
 
