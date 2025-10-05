@@ -1,5 +1,8 @@
 ---
+import { getImage } from 'astro:assets';
 import heroImg from '../assets/halaman-depan.jpg';
+
+const optimizedHeroImg = await getImage({src: heroImg, format: 'webp'});
 ---
 
 <section id="beranda" class="hero d-flex align-items-center">
@@ -23,6 +26,7 @@ import heroImg from '../assets/halaman-depan.jpg';
 	<style is:global>
 		.hero {
             min-height: 100vh;
+			background: url('/web_kesehatan/assets/halaman-depan.jpg');
 			background-size: cover;
 			background-position: center right;
 			position: relative;
