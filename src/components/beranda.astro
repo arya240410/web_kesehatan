@@ -1,8 +1,9 @@
 ---
 ---
 
-<section id="beranda" class="hero d-flex align-items-center">
-	<div class="container">
+<section id="beranda" class="hero d-flex align-items-center position-relative">
+	<img src="/web_kesehatan/assets/halaman-depan.jpg" alt="background" class="hero-bg" />
+	<div class="container position-relative">
 		<div class="row align-items-center">
 			<div class="col-md-6">
 				<div class="hero-content">
@@ -22,15 +23,22 @@
 	<style is:global>
 		.hero {
             min-height: 100vh;
-			background-image: url('/web_kesehatan/assets/halaman-depan.jpg');
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: center;
 			position: relative;
 			display: flex;
 			align-items: center;
 			color: #0b0b0b;
 			padding: 4rem 0;
+			overflow: hidden;
+		}
+		
+		.hero-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: 0;
 		}
 		.hero::before {
 			content: "";
